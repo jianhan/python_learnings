@@ -56,3 +56,33 @@ print(dupe_sample)
 # ["one", "two", "two"...], as it shown, the value one still exists in list
 dupe_sample.remove("one")
 print(dupe_sample)
+
+"""list in function are passed by reference
+"""
+
+ns = [1, 2, 3]
+
+
+def add_first(ll):
+    ll[0] = ll[0] + 1
+
+
+add_first(ns)
+
+print(ns)
+
+""" copy list """
+my_foods = ['pizza', 'falafel', 'carrot cake']
+# friend_foods = my_foods will not work
+friend_foods = my_foods[:]
+friend_foods.append('cherry')
+
+print(my_foods, friend_foods)
+
+# wrong way of copy list
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods
+friend_foods.append('cherry')
+
+print(my_foods, friend_foods)
+
