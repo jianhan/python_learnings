@@ -1,3 +1,13 @@
+"""Things to Remember
+✦ Specifying start, end, and stride in a slice can be extremely
+confusing.
+✦ Prefer using positive stride values in slices without start or end
+indexes. Avoid negative stride values if possible.
+✦ Avoid using start, end, and stride together in a single slice. If you
+need all three parameters, consider doing two assignments (one
+to stride and another to slice) or using islice from the itertools
+built-in module."""
+
 """Python has special syntax for the stride of a slice in
 the form somelist[start:end:stride] . This lets you take every nth item
 when slicing a sequence"""
@@ -31,6 +41,5 @@ start and end indexes. If you must use a stride, prefer making it a
 positive value and omit start and end indexes. If you must use a stride
 with start or end indexes, consider using one assignment for striding
 and another for slicing:"""
-y = x[::2] # ['a', 'c', 'e', 'g']
-z = y[1:-1] # ['c', 'e']
-
+y = x[::2]  # ['a', 'c', 'e', 'g']
+z = y[1:-1]  # ['c', 'e']
